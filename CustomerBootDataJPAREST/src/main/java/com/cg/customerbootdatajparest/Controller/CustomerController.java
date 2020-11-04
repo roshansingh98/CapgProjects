@@ -28,4 +28,13 @@ public class CustomerController {
         return customerDetails;
     }
 
+    @PutMapping("/update")
+    public CustomerDetails update(@RequestBody Customer customer){
+        Customer customerNew = new Customer(customer.getName());
+        customerNew.setId(customer.getId());
+        customerNew = customerService.update(customerNew);
+        CustomerDetails customerDetails = new CustomerDetails(customerNew);
+        return customerDetails;
+    }
+
 }
