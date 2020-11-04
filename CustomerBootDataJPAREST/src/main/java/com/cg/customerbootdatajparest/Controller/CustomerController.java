@@ -1,7 +1,8 @@
-package com.cg.customerappbootjparest.Controller;
+package com.cg.customerbootdatajparest.Controller;
 
-import com.cg.customerappbootjparest.entities.Customer;
-import com.cg.customerappbootjparest.service.CustomerService;
+
+import com.cg.customerbootdatajparest.entities.Customer;
+import com.cg.customerbootdatajparest.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
