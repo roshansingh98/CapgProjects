@@ -2,32 +2,45 @@ package com.cg.customerbootdatajparest.service;
 
 
 
-import com.cg.customerappbootjparest.entities.Customer;
-import com.cg.customerappbootjparest.repository.CustomerRepositoryImpl;
+import com.cg.customerbootdatajparest.entities.Customer;
+import com.cg.customerbootdatajparest.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
 
     @Autowired
-    private CustomerRepositoryImpl repository;
+    private CustomerRepository customerRepository;
 
     @Override
-    @Transactional
     public Customer register(Customer customer) {
-        customer = repository.add(customer);
+        customer = customerRepository.save(customer);
         return customer;
     }
 
     @Override
-    @Transactional
-    public Customer updateName(Long id, String name) {
-        Customer customer = repository.findById(id);
-        customer.setName(name);
-        customer = repository.update(customer);
+    public Customer update(Customer customer) {
+        customer = customerRepository.save(customer);
         return customer;
+    }
+
+    @Override
+    public Customer findById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+
+    }
+
+    @Override
+    public List<Customer> findByFirstName(String name) {
+        return null;
     }
 }
