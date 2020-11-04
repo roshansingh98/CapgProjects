@@ -11,9 +11,9 @@ public interface CustomerService {
 
     public Customer update(Customer customer);
 
-    Customer findById(Integer id);
+    Customer findById(Long id);
 
-    void deleteById(Integer id);
+    void deleteById(Long id);
 
     List<Customer> findByFirstName(String name);
 

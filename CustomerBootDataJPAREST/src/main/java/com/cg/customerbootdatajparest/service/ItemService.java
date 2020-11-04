@@ -4,11 +4,11 @@ import com.cg.customerbootdatajparest.entities.Item;
 
 public interface ItemService {
 
-    Item findById(Long id);
+    Item findById(Integer id);
 
-    Item add(String itemName);
+    Item add(String itemName , String itemDescription);
 
-    Item buyItem(Long itemId, Integer customerId);
+    Item buyItem(Integer itemId, Long customerId);
 
     Item update(Item item);
 }

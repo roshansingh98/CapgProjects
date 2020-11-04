@@ -15,8 +15,18 @@ public class Item {
     private Integer id;
     private String description;
 
+    private String name;
+
     @ManyToOne
     private Customer customer;
+
+    public Item() {}
+
+    public Item(String description, String name) {
+        this.description = description;
+        this.name = name;
+    }
+
 
     public Integer getId() {
         return id;
@@ -40,6 +50,14 @@ public class Item {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

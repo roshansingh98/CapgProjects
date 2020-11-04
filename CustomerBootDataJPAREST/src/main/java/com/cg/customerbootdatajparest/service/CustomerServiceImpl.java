@@ -6,9 +6,10 @@ import com.cg.customerbootdatajparest.entities.Customer;
 import com.cg.customerbootdatajparest.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -30,17 +31,20 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer findById(Integer id) {
-        return null;
+    public Customer findById(Long id) {
+        Optional<Customer> optional = customerRepository.findById(id);
+        Customer customer=optional.get();
+        return customer;
     }
 
     @Override
-    public void deleteById(Integer id) {
-
+    public void deleteById(Long id) {
+        Customer customer = findById(id);
     }
 
     @Override
     public List<Customer> findByFirstName(String name) {
-        return null;
+        List<Customer> customers=customerRepository.findByName(name);
+        return customers;
     }
 }
